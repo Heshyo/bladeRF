@@ -20,7 +20,7 @@ Ideally, the latest released version is always recommended. Please see the [libu
 ### (Optional) FX3 SDK - Windows-only ###
 Windows users that wish to use a Cypress driver/library based libbladeRF backend will need to download and install the [Cypress FX3 SDK]. 
 
-**Windows 10 Note:** The Cypress SDK 1.3.3 does not ship with Windows 10 drivers. See [Cypress KBA94413] for a ZIP file containing the drivers. Copy the Win10 directory from that ZIP file to the ```(...)/EZ-USB FX3 SDK/1.3/driver/bin/``` directory inside of your SDK install. (This will not work unless you manage to bypass Device Driver Signing requirements. Good luck.)
+**Windows 10 Note:** The Cypress SDK 1.3.3 does not ship with Windows 10 drivers. See [Cypress KBA94413] for a ZIP file containing the drivers. Copy the Win10 directory from that ZIP file to the ```(...)/EZ-USB FX3 SDK/1.3/driver/bin/``` directory inside of your SDK install. This will not work unless you manage to bypass Device Driver Signing requirements, which is left as an exercise for the reader.
 
 ### CMake ###
 [CMake][CMake.org] is used to build the items in this directory.  \>= v2.8.5 is required, but the latest available version is recommended.
