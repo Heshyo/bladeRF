@@ -79,8 +79,8 @@ endif()
 ###############################
 option(ENABLE_GDB_EXTENSIONS "Build with -ggdb3 instead of -g" OFF)
 
-if("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU" OR
-   "${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
+if(${CMAKE_C_COMPILER_ID} STREQUAL "GNU" OR
+   ${CMAKE_C_COMPILER_ID} STREQUAL "Clang")
 
     # Personal preference - as much debug info as possible with GDB
     if(${ENABLE_GDB_EXTENSIONS})
@@ -96,13 +96,13 @@ if("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU" OR
         add_definitions(-Werror)
     endif()
 
-    if("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+    if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
         add_definitions(-DDEBUG=1)
         add_definitions(-O0)
-    endif("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+    endif(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
 
-endif("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU" OR
-      "${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
+endif(${CMAKE_C_COMPILER_ID} STREQUAL "GNU" OR
+      ${CMAKE_C_COMPILER_ID} STREQUAL "Clang")
 
 ###############################
 # MS Visual Studio
@@ -180,7 +180,7 @@ if(APPLE)
     set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
     set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
     list(FIND CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES "${CMAKE_INSTALL_PREFIX}/lib" isSystemDir)
-    if("${isSystemDir}" STREQUAL "-1")
+    if(${isSystemDir} STREQUAL "-1")
         set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
     endif()
 endif()
